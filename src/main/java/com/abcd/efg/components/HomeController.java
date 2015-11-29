@@ -15,9 +15,15 @@ import org.slf4j.LoggerFactory;
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value = "/", method = GET)
+	@RequestMapping(value = "/home", method = GET)
 	public String home() {
 		logger.debug("visiting home");
 		return "home";
+	}
+	
+	@RequestMapping(value = "/", method = GET)
+	public String index() {
+		logger.debug("visiting index");
+		return "index";
 	}
 }
