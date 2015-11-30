@@ -11,6 +11,8 @@
 <h1>
 Why the hell not
 </h1>	
-<ng-view />
+<div class="container ng-hide" ng-show="initialized">
+		<div class="alert alert-danger" ng-show="error">{{error}}</div>
+<div><ng-view /></div>
 </body>
 </html>
