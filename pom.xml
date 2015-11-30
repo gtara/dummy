@@ -40,7 +40,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -65,7 +65,7 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		
+
 
 		<dependency>
 			<groupId>org.hsqldb</groupId>
@@ -118,6 +118,19 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>2.0.2-beta</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -173,9 +186,9 @@
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.10</version>
-				
+
 				<configuration>
-				
+
 					<additionalProjectnatures>
 						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
 					</additionalProjectnatures>
@@ -207,17 +220,18 @@
 					<mainClass>com.abcd.efg.components.HomeControllerTest</mainClass>
 				</configuration>
 			</plugin>
-			<!-- this one is implicitly added, but we add explicitly to fix web.xml complaint -->
+			<!-- this one is implicitly added, but we add explicitly to fix web.xml 
+				complaint -->
 			<plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-war-plugin</artifactId>
-               <version>2.6</version>
-               <configuration>
-                   <failOnMissingWebXml>false</failOnMissingWebXml>
-               </configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
 			</plugin>
 		</plugins>
-		
+
 	</build>
 
 

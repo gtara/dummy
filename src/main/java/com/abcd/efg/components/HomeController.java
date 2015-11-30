@@ -21,7 +21,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/", method = GET)
+	@RequestMapping(value = {"/","/index"}, method = GET)
 	public String index() {
 		logger.debug("visiting index");
 		return "index";
