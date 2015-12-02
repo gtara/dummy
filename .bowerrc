@@ -1,5 +1,5 @@
 {
-  "directory": "/src/main/webapp/bower-components",
+  "directory": "/src/main/webapp/resources/bower-components",
   "analytics": false,
   "timeout": 120000
 }

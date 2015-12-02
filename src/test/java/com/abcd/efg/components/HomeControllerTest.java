@@ -26,6 +26,8 @@ public class HomeControllerTest {
 	}
 	
 	
+	
+	
 	@Test
 	public void shouldShowRequests() throws Exception {
 		List<Request> expectedRequests = createRequestList(20);
@@ -44,7 +46,7 @@ public class HomeControllerTest {
 		List<Request> requests= new ArrayList<Request>();
 		for (int i=0; i < count; i++) 
 		{
-			requests.add(new Request("Request" + Integer.toString(i)));
+			requests.add(new Request("Request" + Integer.toString(i), "email"));
 		}
 		return requests;
 	}

@@ -39,12 +39,12 @@
   	  	
   	
 	<logger name="com.abcd" level="DEBUG" ></logger>
-	<logger name="org.springframework" level = "DEBUG" ></logger>
+	<logger name="org.springframework" level = "TRACE" ></logger>
   	<logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG"/>
   	<logger name="org.hibernate" level="debug"></logger>
 
 	<root>
-		<level value="DEBUG" />
+		<level value="TRACE" />
 		<appender-ref ref="consoleAppender" />
 	</root>
 </configuration>

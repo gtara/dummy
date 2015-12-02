@@ -2,7 +2,7 @@
   "name": "cooltools",
   "version": "0.0.0",
   "authors": [
-    "guoda <@utrc.com>"
+    "guoda <@wonderland.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -13,8 +13,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.4.0",
-    "bootstrap": "3.2.0",
-    "jquery": "1.11.3"
+    "angular-route": "1.4.x",  	
+    "angular": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest",
+	"jquery-ui": "latest"
   }
 }
