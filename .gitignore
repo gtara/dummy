@@ -1,2 +1,2 @@
-target
-src/main/webapp/resources/bower-components
+/target
+/src/main/webapp/static-resources/bower-components/

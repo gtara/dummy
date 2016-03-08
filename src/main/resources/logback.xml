@@ -9,20 +9,17 @@
 		</filter> -->
 	</appender>
 
-<!--   	<appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
-<!-- 		<File>c:/tmp/rest-demo.log</File> -->
-<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
-<!-- 		    daily rollover -->
-<!-- 			<FileNamePattern>rest-demo.%d{yyyy-MM-dd}.log</FileNamePattern> -->
+  	<appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>rest-demo.log</File>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		 			<FileNamePattern>rest-demo.%d{yyyy-MM-dd}.log</FileNamePattern>
+			<maxHistory>1</maxHistory>			
+		</rollingPolicy>
 
-<!-- 		 	 keep 30 days' worth of history --> 
-<!-- 			<maxHistory>30</maxHistory>			 -->
-<!-- 		</rollingPolicy> -->
-
-<!-- 		<encoder> -->
-<!-- 			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern> -->
-<!-- 		</encoder> 	     -->
-<!--   	</appender> -->
+		<encoder>
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+		</encoder> 	    
+  	</appender>
 <!--   	<appender name="minuteRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
 <!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
 <!-- 		    rollover every minute -->
@@ -39,12 +36,13 @@
   	  	
   	
 	<logger name="com.abcd" level="DEBUG" ></logger>
-	<logger name="org.springframework" level = "TRACE" ></logger>
-  	<logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="DEBUG"/>
-  	<logger name="org.hibernate" level="debug"></logger>
+	<logger name="org.springframework" level = "WARN" ></logger>
+  	<logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="WARN"/>
+  	<logger name="org.hibernate" level="WARN"></logger>
 
 	<root>
 		<level value="TRACE" />
 		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="dailyRollingFileAppender" />
 	</root>
 </configuration>

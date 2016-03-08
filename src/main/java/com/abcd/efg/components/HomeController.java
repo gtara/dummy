@@ -25,6 +25,6 @@ public class HomeController {
 	@RequestMapping(value = {"/","/index"}, method = GET)
 	public String index() {
 		logger.debug("visiting index");
-		return "resources/index.html";
+		return "static-resources/index.html";
 	}
 }
