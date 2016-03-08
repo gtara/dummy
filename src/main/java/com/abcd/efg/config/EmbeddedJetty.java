@@ -50,19 +50,31 @@ public class EmbeddedJetty {
         HandlerList handlers = new HandlerList();
         
         //redirects----------------------------------
+//        <Call name="addRule">
+//        <Arg>
+//          <New class="org.eclipse.jetty.rewrite.handler.RedirectPatternRule">
+//            <Set name="pattern">/voxer/*</Set>
+//            <Set name="location">/services/</Set>
+//          </New>
+//        </Arg>
+//      </Call>
+//    </New>
         RewriteHandler rewrite = new RewriteHandler();
-        
+        rewrite.setRewriteRequestURI(true);
+        rewrite.setRewritePathInfo(false);        
+        rewrite.setOriginalPathAttribute("requestedPath");
         
         RewritePatternRule regexrule = new RewritePatternRule();
         regexrule.setPattern("/cooltools/*");
         regexrule.setReplacement("/cooltools/");
+        //regexrule.setReplacement("/index.html");
         regexrule.setTerminating(true);
         //regexrule.setReplacement("/cooltools/");
         rewrite.addRule(regexrule);
         
         ServletContextHandler webapp = getServletContextHandler(getContext());
-//        webapp.setHandler(rewrite);
-        handlers.setHandlers(new Handler [] {webapp});
+        rewrite.setHandler(webapp);
+        handlers.setHandlers(new Handler [] {rewrite});
 //        //getServletContextHandler(getContext()), 
         server.setHandler(handlers);
         server.start();
